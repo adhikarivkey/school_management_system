@@ -1,1 +1,1 @@
-web: unicorn sms.wsgi --log-file -
+web: gunicorn sms.wsgi --log-file -
