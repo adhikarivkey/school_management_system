@@ -5,10 +5,12 @@ from django.contrib import messages
 from django.core.paginator import Paginator
 
 # Create your views here.
-def teacher_list(request):
-    teachers = TeacherInfo.objects.all()
 
-    paginator = Paginator(teachers, 1)
+
+def teacher_list(request):
+    teachers = TeacherInfo.objects.all().order_by('id')
+
+    paginator = Paginator(teachers, 9)
     page = request.GET.get('page')
     paged_teachers = paginator.get_page(page)
     context = {
@@ -65,4 +67,10 @@ def delete_teacher(request, teacher_id):
     teacher_delete.delete()
     messages.success(request, "Delete Teacher Info Successfully")
     return redirect("teacher_list")
+
+
+
+
+
+
 

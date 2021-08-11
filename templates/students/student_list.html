@@ -26,7 +26,8 @@
                     <tbody>
                         {% for student in students %}
                             <tr>
-                                <td>{{ forloop.counter }}</td>
+<!--                                <td>{{ forloop.counter }}</td>-->
+                                <td>{{ student.id }}</td>
                                 <td>{{ student.name }}</td>
                                 <td>{{ student.class_type }}</td>
                                 <td>{{ student.academic_year }}</td>

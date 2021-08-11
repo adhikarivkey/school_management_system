@@ -5,15 +5,17 @@ from django.contrib import messages
 from .forms import CreateStudent
 
 # Create your views here.
+
+
 def student_list(request):
-    students = StudentInfo.objects.all()
-    paginator = Paginator(students, 1)
+    students = StudentInfo.objects.all().order_by('id')
+    paginator = Paginator(students, 9)
     page = request.GET.get('page')
     paged_students = paginator.get_page(page)
-
     context = {
         "students": paged_students
     }
+    print(context)
     return render(request, "students/student_list.html", context)
 
 

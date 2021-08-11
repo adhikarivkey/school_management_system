@@ -1,17 +1,21 @@
 from django.db import models
 
 # Create your models here.
+
+
 class TeacherDeptInfo(models.Model):
     dept_name = models.CharField(max_length=50)
 
     def __str__(self):
         return self.dept_name
 
+
 class TeacherSubInfo(models.Model):
     sub_name = models.CharField(max_length=50)
 
     def __str__(self):
         return self.sub_name
+
 
 class TeacherInfo(models.Model):
     name = models.CharField(max_length=100)

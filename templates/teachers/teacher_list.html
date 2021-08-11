@@ -26,7 +26,8 @@
                     <tbody>
                         {% for teacher in teachers %}
                             <tr>
-                                <td>{{ forloop.counter }}</td>
+<!--                                <td>{{ forloop.counter }}</td>-->
+                                <td>{{ teacher.id }}</td>
                                 <td>{{ teacher.name }}</td>
                                 <td>{{ teacher.email }}</td>
                                 <td>{{ teacher.dept_type }}</td>

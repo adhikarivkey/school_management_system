@@ -1,0 +1,5 @@
+StudentInfo.objects.update_or_create(academic_year=f.year(), admission_date=f.date(), admission_id=random.randint(10000, 99999),  name=f.name(), age=random.randint(15,26), gender=random.randint(1, 2), class_type=StudentClassInfo.objects.get(id=random.randint(1, 2)),section_type=StudentSectionInfo.objects.get(id=random.randint(1, 4)), shift_type=StudentShiftInfo.objects.get(id=random.randint(1, 2)), fathers_name=f.name(), fathers_id=random.randint(10000, 99999), fathers_number=random.randint(9100000000, 9999956565),mothers_name=f.name(), mothers_id=random.randint(10000, 99999), mothers_number= random.randint(9100000000, 9999956565))
+
+
+TeacherInfo.objects.update_or_create(name=f.name(),email=f.email(), age=random.randint(26,40), gender=a[random.randint(0,1)], passing_year=f.year(), joining_date=f.date(),dept_type= TeacherDeptInfo.objects.get(id=random.randint(1, 2)),sub_type=TeacherSubInfo.objects.get(id=random.randint(1, 3)), salary= random.randint(30000, 70999))
+(<TeacherInfo: Garrett Mcfarland>, True)
