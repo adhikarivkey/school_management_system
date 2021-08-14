@@ -9,6 +9,7 @@ from teachers.models import TeacherInfo
 def index(request):
     teachers = TeacherInfo.objects.all().order_by('id')
     students = StudentInfo.objects.all().order_by('id')
+
     paginator_teachers = Paginator(teachers, 3)
     page_teachers = request.GET.get('page')
     paged_teachers = paginator_teachers.get_page(page_teachers)
@@ -22,7 +23,7 @@ def index(request):
     paged_students = paginator.get_page(page)
     context = {
         "students": paged_students,
-        "teachers": paged_teachers
+        "teachers": paged_teachers,
     }
     return render(request, "home.html", context)
 
