@@ -11,11 +11,15 @@ def teacher_list(request):
     teachers = TeacherInfo.objects.all().order_by('id')
 
     paginator = Paginator(teachers, 9)
+    print(paginator)
     page = request.GET.get('page')
+    print(2, page)
     paged_teachers = paginator.get_page(page)
+    print(0,paged_teachers)
     context = {
         "teachers": paged_teachers
     }
+    print(3, context)
     return render(request, "teachers/teacher_list.html", context)
 
 
